@@ -14,7 +14,7 @@ contract BankAccount {
     }
 
     // Withdraw money
-    function withdraw(uint amount) public {
+    function withdraw(uint amount) public payable{
         require(amount > 0, "Amount must be greater than zero");
         require(balances[msg.sender] >= amount, "Insufficient balance");
 
